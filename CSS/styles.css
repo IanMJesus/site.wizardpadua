@@ -9,6 +9,10 @@ h2, h3, h4, h5 {
     background-color: white;
 }
 
+a {
+    background-color: white;
+}
+
 body {
     display: flex; /* Posicionar os elementos dinamicamente */
     flex-direction: column; /* Coloca os itens alinhados em formato de coluna */
@@ -62,9 +66,13 @@ h2 {
 }
 
 .telefone {
-    margin-top: 20px;
-    font-size: 28px;
+    margin-top: 15px;
+    font-size: 25px;
     margin-bottom: 10px;
+}
+
+.whatsapp {
+    margin-top: 15px;
 }
 
 .container p {
@@ -105,7 +113,8 @@ h6 {
     margin-top: 15px;
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 17px;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .estrutura, .material-didatico {
@@ -123,6 +132,33 @@ h6 {
     border-radius: 5px;
     cursor: pointer;
 }
+
+footer {
+    background-color: white;
+    width: 100vw; /* Faz o rodapé ocupar toda a largura da página */
+    padding: 20px;
+    margin-bottom: -10px;
+}
+
+footer p {
+    background-color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.instagram {
+    width: 60px;
+    background-color: white;
+    margin-left: 50px;
+}
+
+.facebook {
+    width: 60px;
+    background-color: white;
+    margin-left: 80px;
+}
+
 
 /* -------------------------- */
 
@@ -215,6 +251,12 @@ h6 {
     h2 {
         font-size: 1.2rem;
     }
+
+    .aula-demonstrativa {
+        padding: 10px;
+    }
+}
+
 
     .aula-demonstrativa {
         padding: 10px;
