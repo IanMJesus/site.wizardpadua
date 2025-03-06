@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="header">
+        <img src="IMG/logo-wizard.png" id="logo-wizard">
+        <h2>Santo Antônio de Pádua - RJ</h2>
+    </div>
+
+    <div class="container">
+        
+        <div class="aula-demonstrativa">
+            <h4>Parabéns!</h4>
+            <h5>Você acaba de ganhar 4 aulas de inglês 100% gratuitas!</h5>
+            <p class="contato">Entre em contato conosco para agendar um horário!</p>
+            <p class="telefone">(22) 98115-0364</p>
+        </div>
+    
+    </div>
+
+    <h6>Conheça um pouco mais sobre a nossa história</h6>
+    <div class="historia">   
+        <p>Desde 2007, ajudamos crianças, jovens e adultos a conquistarem novas oportunidades por meio do aprendizado de idiomas. São mais de 17 anos transformando vidas, abrindo portas e fazendo história na comunidade paduana. Aqui, o ensino vai além das palavras: usamos métodos inovadores, contamos com professores qualificados e oferecemos uma experiência envolvente e personalizada. Afinal, aprender um novo idioma não é só estudar, é crescer, conectar-se com o mundo e alcançar novos sonhos. Venha fazer parte dessa trajetória de sucesso!</p>
+    </div>
+
+    <h6>Estrutura</h6>
+    <div class="estrutura">
+        <img src="IMG/Estrutura 6.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 2.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 3.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 4.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 5.jpeg" onclick="abrirImagem(this)">
+        <img src="IMG/Estrutura 1.jpg" onclick="abrirImagem(this)">
+    </div>
+
+    <h6>Materiais Didáticos</h6>
+    <div class="material-didatico">
+        <img src="IMG/Material (1).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (2).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (3).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (4).jpg" onclick="abrirImagem(this)">
+        <img src="IMG/Material (5).jpg" onclick="abrirImagem(this)">
+    </div>
+
+    <!-- Abrir e fechar as imagens da estrutura, e utilizar seta para ir pra próxima imagem -->
+
+    <div class="overlay" id="overlay">
+        <span class="fechar" onclick="fecharImagem()">×</span>
+        <img id="imagemAmpliada">
+        <span class="seta anterior" onclick="mudarImagem(-1)">❮</span>
+        <span class="seta proximo" onclick="mudarImagem(1)">❯</span>
+    </div>
+
+    <script>
+        let indiceAtual = 0;
+        let galeriaAtual = []; // Armazena apenas as imagens da galeria selecionada
+    
+        function abrirImagem(elemento) {
+            // Identifica a galeria correta
+            let galeria = elemento.closest('.estrutura') ? ".estrutura img" : ".material-didatico img";
+            
+            // Captura apenas as imagens da galeria aberta
+            galeriaAtual = Array.from(document.querySelectorAll(galeria));
+            
+            // Obtém o índice correto da imagem na lista da galeria
+            indiceAtual = galeriaAtual.indexOf(elemento);
+    
+            // Exibe a imagem no modal
+            document.getElementById("imagemAmpliada").src = elemento.src;
+            document.getElementById("overlay").style.display = "flex";
+        }
+    
+        function fecharImagem() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    
+        function mudarImagem(direcao) {
+            indiceAtual = (indiceAtual + direcao + galeriaAtual.length) % galeriaAtual.length;
+            document.getElementById("imagemAmpliada").src = galeriaAtual[indiceAtual].src;
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #d3d3d3;
+}
+
+h2, h3, h4, h5 {
+    background-color: white;
+}
+
+body {
+    display: flex; /* Posicionar os elementos dinamicamente */
+    flex-direction: column; /* Coloca os itens alinhados em formato de coluna */
+    align-items: center;
+    gap: 20px; /* Espaço entre os elementos */
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    width: 100%;
+    padding: 10px;
+    position: relative; /* Mantém a estrutura */
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+h2 {
+    padding: 40px;
+    text-align: center; /* Centraliza o texto */
+}
+
+#logo-wizard {
+    position: absolute;
+    left: 10px; /* Mantém a logo no canto esquerdo */
+    top: 10px;
+    max-width: 100%; /* Redimensiona a logo conforme necessário */
+    padding: 15px;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.aula-demonstrativa {
+    width: 90%; /* Garante que o bloco se adapte */
+    max-width: 400px; /* Limita o tamanho máximo */
+    padding: 15px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.telefone {
+    margin-top: 20px;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    background-color: white;
+}
+
+.aula-demonstrativa {
+    max-width: 800px;
+}
+
+.contato {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.aula-demonstrativa h5 {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h6 {
+    margin-top: 20px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    margin-bottom: -10px;
+}
+
+.historia p {
+    margin-top: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 17px;
+}
+
+.estrutura, .material-didatico {
+    display: flex; /* Alinha as imagens horizontalmente */
+    gap: 10px; /* Espaço entre as imagens */
+    overflow-x: auto; /* Adiciona a barra de rolagem horizontal apenas nas imagens */
+    white-space: nowrap; /* Garante que as imagens fiquem em uma única linha */
+    padding: 20px;
+    max-width: 90vw; /* Ajusta o tamanho máximo ao viewport */ 
+}
+
+.estrutura img, .material-didatico img {
+    width: 293px; /* Ajuste o tamanho das imagens conforme necessário */
+    flex-shrink: 0; /* Evita que as imagens diminuam */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* -------------------------- */
+
+/* Personaliza a barra de rolagem horizontal */
+.estrutura::-webkit-scrollbar, .material-didatico::-webkit-scrollbar  {
+    height: 13px; /* Altura da barra de rolagem horizontal */
+  }
+  
+.estrutura::-webkit-scrollbar-track, .material-didatico::-webkit-scrollbar-track {
+    width: 1px; /* Ajuste esse valor para padronizar todas as barras */
+    background: #d3d3d3; /* Cor de fundo da trilha */
+    border-radius: 4px;
+  }
+  
+.estrutura::-webkit-scrollbar-thumb, .material-didatico::-webkit-scrollbar-thumb {
+    background: #333; /* Cor da barra de rolagem */
+    border-radius: 4px;
+  }
+  
+.estrutura::-webkit-scrollbar-thumb:hover, .material-didatico::-webkit-scrollbar-thumb:hover  {
+    background: #808080; /* Cor ao passar o mouse */
+  }
+/* -------------------------- */
+
+/* Fechar e abrir imagem da estrutura, e passar e voltar imagens */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+}
+.fechar, .seta {
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.fechar {
+    top: 15px;
+    right: 20px;
+}
+
+.seta {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.anterior { left: 20px; }
+.proximo { right: 20px; }
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Coloca a logo e o título um em cima do outro */
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aula-demonstrativa {
+        width: 100%;
+    }
+
+    #logo-wizard {
+        position: static; /* Remove posição fixa */
+        margin-bottom: 10px; /* Espaço entre a logo e o título */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Reduz o tamanho do título */
+        width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .aula-demonstrativa {
+        padding: 10px;
+    }
+}
+
