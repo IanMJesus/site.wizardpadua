@@ -244,13 +244,13 @@ footer p {
     }
 
     h2 {
-        font-size: 2.4rem; /* Reduz o tamanho do título */
+        font-size: 2.0rem; /* Reduz o tamanho do título */
     }
 }
 
 @media (max-width: 480px) {
     h2 {
-        font-size: 2.4rem;
+        font-size: 2.0rem;
     }
 
     .aula-demonstrativa {
